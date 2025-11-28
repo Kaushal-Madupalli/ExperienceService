@@ -12,10 +12,10 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-//    private final Dotenv dotenv = Dotenv.load();
-//    private final String SECRET = dotenv.get("JWT_SECRET");
+    private final Dotenv dotenv = Dotenv.load();
+    private final String SECRET = dotenv.get("JWT_SECRET");
 	
-	private final String SECRET ="mysupersecretjwtkey_1234567890_secure";
+	//private final String SECRET ="mysupersecretjwtkey_1234567890_secure";
 
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(SECRET.getBytes());

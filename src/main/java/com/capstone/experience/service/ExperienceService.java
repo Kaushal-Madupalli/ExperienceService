@@ -23,4 +23,7 @@ public interface ExperienceService {
                                     Double minYears,
                                     String sortBy,
                                     String sortDir);
+    
+    List<ExperienceResponse> getAllExperience();
+
 }

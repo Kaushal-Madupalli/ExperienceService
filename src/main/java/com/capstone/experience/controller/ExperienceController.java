@@ -123,4 +123,12 @@ public class ExperienceController {
                 );
         return ResponseEntity.ok(list);
     }
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping
+    public ResponseEntity<List<ExperienceResponse>> getAll() {
+        List<ExperienceResponse> list = experienceService.getAllExperience();
+        return ResponseEntity.ok(list);
+    }
+
 }

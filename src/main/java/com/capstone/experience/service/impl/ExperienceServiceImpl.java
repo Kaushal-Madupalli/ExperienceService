@@ -115,4 +115,14 @@ public class ExperienceServiceImpl implements ExperienceService {
                 .map(this::toResponse)
                 .collect(Collectors.toList());
     }
+    
+    
+    @Override
+    public List<ExperienceResponse> getAllExperience() {
+        return experienceRepository.findAll()
+                .stream()
+                .map(this::toResponse)
+                .toList();
+    }
+
 }

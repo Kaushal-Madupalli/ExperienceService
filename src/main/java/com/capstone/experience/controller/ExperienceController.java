@@ -47,7 +47,7 @@ public class ExperienceController {
 
     // Chart data for logged-in user
     @PreAuthorize("hasAnyRole('ADMIN','USER')")
-    @GetMapping("/me/summary")
+    @GetMapping("/summary/me")
     public ResponseEntity<List<ExperienceSummaryResponse>> getMySummary(
             @RequestHeader("Authorization") String authHeader) {
 
@@ -68,7 +68,7 @@ public class ExperienceController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/employee/{employeeId}/summary")
+    @GetMapping("/employee/summary/{employeeId}")
     public ResponseEntity<List<ExperienceSummaryResponse>> getSummaryForEmployee(
             @PathVariable Long employeeId) {
 
